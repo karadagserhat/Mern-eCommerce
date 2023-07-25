@@ -17,7 +17,7 @@ const App = () => {
       </main>
       <Footer />
 
-      <ToastContainer />
+      <ToastContainer position="top-center" />
     </>
   );
 };

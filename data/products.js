@@ -1,5 +1,70 @@
 const products = [
   {
+    name: "Adidas Men's Kaptir 2.0 Running Shoe",
+    image: '/images/adidas-kaptir.jpg',
+    description:
+      "Roll through your day in total comfort in these men's adidas running-inspired shoes. They feature a Cloudfoam midsole that's pillow soft. The knit upper provides a snug and secure fit.",
+    brand: 'Adidas',
+    category: 'Shoes',
+    price: 54.39,
+    countInStock: 10,
+    rating: 5,
+    numReviews: 12,
+  },
+
+  {
+    name: "New Balance Women's Dynasoft Nergize V3 Cross Trainer",
+    image: '/images/New-balance-dynasoft.jpg',
+    description:
+      "The versatile and dynamic New Balance Women's Dynasoft Nergize V3 Cross Trainer supports you from your morning workout through all-day wear. These women's running shoes have a stretchy air mesh upper on top of a durable rubber outsole to offer breathability and traction. Underfoot, a DynaSoft midsole provides a responsive ride whether you're working out or hitting your morning commute",
+    brand: 'New Balance',
+    category: 'Shoes',
+    price: 60.59,
+    countInStock: 7,
+    rating: 4,
+    numReviews: 13,
+  },
+
+  {
+    name: "Reebok Women's Nano X1 Cross Trainer",
+    image: '/images/Reebok-nano.jpg',
+    description:
+      'Reebok is an American-inspired global brand with a deep fitness heritage and a clear mission: To be the best fitness brand in the world. Not an easy one. But if there is one brand that can make it happen, it is Reebok, the brand that was fundamentally part of a fitness movement that forever changed the way we look at spandex and headbands.',
+    brand: 'Reebok',
+    category: 'Shoes',
+    price: 63.0,
+    countInStock: 5,
+    rating: 4.5,
+    numReviews: 4,
+  },
+
+  {
+    name: "PUMA Men's Axelion Running Shoe",
+    image: '/images/Puma-axelion.jpg',
+    description:
+      'The Axelion LS is amazing. This pinnacle model combines progressive design detailing with our foam heel unit. The PUMA logo on the heel is bold, the lacing is exaggerated. The result, is a true game-changer.',
+    brand: 'PUMA',
+    category: 'Shoes',
+    price: 49.99,
+    countInStock: 8,
+    rating: 4.5,
+    numReviews: 5,
+  },
+
+  {
+    name: 'Nike Unisex-Adult Basketball Shoe',
+    image: '/images/Nike-basketball.jpg',
+    description:
+      'The Nike Air Max Impact shoe offers a casual style and ideal comfort for every day with the classic Air Max look. The revolutionary Air-Sole unit debuted in the Nike footwear line in 1978. The 1987 marks the debut of the Nike Air Max 1. first model with Air unit visible in the heel. showing admirers the features of the new technology.',
+    brand: 'Nike',
+    category: 'Shoes',
+    price: 64.31,
+    countInStock: 8,
+    rating: 4,
+    numReviews: 5,
+  },
+
+  {
     name: 'Airpods Wireless Bluetooth Headphones',
     image: '/images/airpods.jpg',
     description:
@@ -35,18 +100,7 @@ const products = [
     rating: 3,
     numReviews: 12,
   },
-  {
-    name: 'Sony Playstation 4 Pro White Version',
-    image: '/images/playstation.jpg',
-    description:
-      'The ultimate home entertainment center starts with PlayStation. Whether you are into gaming, HD movies, television, music',
-    brand: 'Sony',
-    category: 'Electronics',
-    price: 399.99,
-    countInStock: 11,
-    rating: 5,
-    numReviews: 12,
-  },
+
   {
     name: 'Logitech G-Series Gaming Mouse',
     image: '/images/mouse.jpg',
