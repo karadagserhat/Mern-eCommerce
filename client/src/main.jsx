@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import {
   createBrowserRouter,
@@ -15,20 +15,49 @@ import './assets/styles/bootstrap.custom.css';
 import './assets/styles/index.css';
 import PrivateRoute from './components/PrivateRoute.jsx';
 import AdminRoute from './components/AdminRoute.jsx';
-import HomeScreen from './screens/HomeScreen';
-import ProductScreen from './screens/ProductScreen';
-import CartScreen from './screens/CartScreen';
-import LoginScreen from './screens/LoginScreen.jsx';
-import RegisterScreen from './screens/RegisterScreen.jsx';
-import ShippingScreen from './screens/ShippingScreen.jsx';
-import PlaceOrderScreen from './screens/PlaceOrderScreen.jsx';
-import OrderScreen from './screens/OrderScreen.jsx';
-import ProfileScreen from './screens/ProfileScreen.jsx';
-import OrderListScreen from './screens/admin/OrderListScreen.jsx';
-import ProductListScreen from './screens/admin/ProductListScreen.jsx';
-import ProductEditScreen from './screens/admin/ProductEditScreen.jsx';
-import UserListScreen from './screens/admin/UserListScreen.jsx';
-import UserEditScreen from './screens/admin/UserEditScreen.jsx';
+import Loader from './components/Loader.jsx';
+
+// import HomeScreen from './screens/HomeScreen';
+const HomeScreen = lazy(() => import('./screens/HomeScreen.jsx'));
+// import ProductScreen from './screens/ProductScreen';
+const ProductScreen = lazy(() => import('./screens/ProductScreen'));
+// import CartScreen from './screens/CartScreen';
+const CartScreen = lazy(() => import('./screens/CartScreen'));
+// import LoginScreen from './screens/LoginScreen.jsx';
+const LoginScreen = lazy(() => import('./screens/LoginScreen.jsx'));
+// import RegisterScreen from './screens/RegisterScreen.jsx';
+const RegisterScreen = lazy(() => import('./screens/RegisterScreen.jsx'));
+// import ShippingScreen from './screens/ShippingScreen.jsx';
+const ShippingScreen = lazy(() => import('./screens/ShippingScreen.jsx'));
+// import PlaceOrderScreen from './screens/PlaceOrderScreen.jsx';
+const PlaceOrderScreen = lazy(() => import('./screens/PlaceOrderScreen.jsx'));
+// import OrderScreen from './screens/OrderScreen.jsx';
+const OrderScreen = lazy(() => import('./screens/OrderScreen.jsx'));
+// import ProfileScreen from './screens/ProfileScreen.jsx';
+const ProfileScreen = lazy(() => import('./screens/ProfileScreen.jsx'));
+// import OrderListScreen from './screens/admin/OrderListScreen.jsx';
+const OrderListScreen = lazy(() =>
+  import('./screens/admin/OrderListScreen.jsx')
+);
+// import ProductListScreen from './screens/admin/ProductListScreen.jsx';
+const ProductListScreen = lazy(() =>
+  import('./screens/admin/ProductListScreen.jsx')
+);
+// import ProductEditScreen from './screens/admin/ProductEditScreen.jsx';
+const ProductEditScreen = lazy(() =>
+  import('./screens/admin/ProductEditScreen.jsx')
+);
+// import UserListScreen from './screens/admin/UserListScreen.jsx';
+const UserListScreen = lazy(() => import('./screens/admin/UserListScreen.jsx'));
+// import UserEditScreen from './screens/admin/UserEditScreen.jsx';
+const UserEditScreen = lazy(() => import('./screens/admin/UserEditScreen.jsx'));
+// import PageNotFoundScreen from './screens/PageNotFoundScreen.jsx';
+const PageNotFoundScreen = lazy(() =>
+  import('./screens/PageNotFoundScreen.jsx')
+);
+
+// dist/assets/index-c1001910.css  233.92 kB │ gzip:  32.19 kB
+// dist/assets/index-fe76ccf0.js   464.75 kB │ gzip: 150.46 kB
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -63,6 +92,7 @@ const router = createBrowserRouter(
         <Route path="/admin/userlist" element={<UserListScreen />} />
         <Route path="/admin/user/:id/edit" element={<UserEditScreen />} />
       </Route>
+      <Route path="*" element={<PageNotFoundScreen />} />
     </Route>
   )
 );
@@ -71,7 +101,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <HelmetProvider>
       <Provider store={store}>
-        <RouterProvider router={router} />
+        <Suspense fallback={<Loader />}>
+          <RouterProvider router={router} />
+        </Suspense>
       </Provider>
     </HelmetProvider>
   </React.StrictMode>
